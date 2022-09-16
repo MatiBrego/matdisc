@@ -2,11 +2,6 @@ package matdisc.graph;
 
 
 import java.util.List;
-import java.util.concurrent.CountDownLatch;
-
-import org.checkerframework.checker.units.qual.Length;
-
-import matdisc.graph.util.Vertex;
 
 
 
