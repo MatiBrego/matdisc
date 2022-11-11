@@ -14,8 +14,17 @@ public class DigraphApi<T> {
         }
     }
 
-    public void ShowGraph(){
-        //después sigo con la implementación porque no tengo idea que hacer
+    public void ShowGraph(Digraph<T> digraph){
+        ArrayList<T> list_of_Vertex = new ArrayList<>();
+        ArrayList<int[]> list_of_Edges = new ArrayList<>();
+        for(int i = 0; i<digraph.order(); i++){
+            list_of_Vertex.add(digraph.getVertex(0));
+            for(int vertexes: digraph.getListInheritors(i)){
+                int[] edge = {i, vertexes};
+                list_of_Edges.add(edge);
+            }
+
+        }
     }
 
 
