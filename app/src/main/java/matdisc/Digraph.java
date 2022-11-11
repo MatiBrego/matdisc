@@ -71,6 +71,13 @@ public interface Digraph<T>{
      */
     public T getVertex(int v);
 
+    /**
+     * Gets the position of vertex v
+     * 
+     * @param v the object of the vertex to be found
+     * @return the position of the vertex
+     */
+    public int getVertex(T v);
 
     /**
      * A list containing the inheritors of the vertex v

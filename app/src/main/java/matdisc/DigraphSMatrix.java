@@ -71,6 +71,11 @@ public class DigraphSMatrix<T> implements Digraph<T>{
     }
 
     @Override
+    public int getVertex(T v) {
+        return vertexes.indexOf(v);
+    }
+
+    @Override
     public List<Integer> getListInheritors(int v) {
         List<Integer> l = new ArrayList<>();
         for (int i = 0; i < matrix.length; i++) {
