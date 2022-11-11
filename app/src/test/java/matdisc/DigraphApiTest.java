@@ -2,8 +2,8 @@ package matdisc;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class DigraphApiTest {
 
@@ -83,8 +83,20 @@ public class DigraphApiTest {
         apiTest.putDataInGraph(vertex2,edges2,digraph2);
         assertTrue(apiTest.isStronglyConnected(digraph));
         assertFalse(apiTest.isStronglyConnected(digraph2));
+    }
+    @Test
+    public void TestWarshall(){
+        DigraphApi<String> apiTest = new DigraphApi<>();
+        String[] vertex = {"a", "b", "c", "d"};
+        DigraphSMatrix<String> digraph = new DigraphSMatrix<>(vertex.length);
+        int[][] edges = {{0,1}, {1,2}, {2,3}, {3,0}};
+        apiTest.putDataInGraph(vertex,edges,digraph);
+        Digraph<String> digraph2 = apiTest.Warshall(digraph);
+        assertEquals(16, digraph2.edgeQuantity());
+
 
     }
+
 
 
 }
