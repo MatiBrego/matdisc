@@ -22,19 +22,19 @@ public class DigraphSMatrix<T> implements Digraph<T>{
     @Override
     public void addVertex(T element) {
         vertexes.add(element);
+        if(size == capacity)
+            grow();
         size++;
     }
 
     @Override
-    public void addEdge(int v, int w) {
+    public void addEdge(int v, int w){
         matrix[v][w] = true;
-        
     }
 
     @Override
     public void deleteEdge(int v, int w) {
         matrix[v][w] = false;
-        
     }
 
     @Override
@@ -92,5 +92,14 @@ public class DigraphSMatrix<T> implements Digraph<T>{
         return capacity;
     }
 
-    
+    private void grow(){
+        capacity += 10;
+        boolean[][] newMatrix = new boolean[capacity][capacity];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                newMatrix[i][j] = matrix[i][j];
+            }
+        }
+        this.matrix = newMatrix;
+    }
 }
