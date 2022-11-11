@@ -70,7 +70,7 @@ public interface Digraph<T>{
      * @param v the position of the vertex to be returned
      * @return the element in the vertex
      */
-    public T getVertice(int v);
+    public T getVertex(int v);
 
 
     /**
