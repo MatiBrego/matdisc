@@ -7,7 +7,7 @@ public class DigraphSMatrix<T> implements Digraph<T>{
 
     private List<T> vertexes;
 
-    private boolean[][] matrix;
+     boolean[][] matrix;
 
     private int size;
 
