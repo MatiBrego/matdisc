@@ -3,11 +3,11 @@ package matdisc;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DigraphSMatrix<T> implements Digraph<T>{
+public class DigraphSMatrix<T> implements Digraph<T> {
 
     private List<T> vertexes;
 
-     boolean[][] matrix;
+    private boolean[][] matrix;
 
     private int size;
 

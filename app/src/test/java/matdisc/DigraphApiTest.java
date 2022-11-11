@@ -58,7 +58,16 @@ public class DigraphApiTest<T> {
 
 
 
+    @Test
+    public void TestVertexes(){
+        DigraphApi apiTest = new DigraphApi();
+        String[] vertex = {"a", "b", "c"};
+        DigraphSMatrix<T> digraph = new DigraphSMatrix(vertex.length);
+        int[][] edges = {{0,2}, {1,2}, {2,1}};
+        apiTest.putDataInGraph(vertex,edges,digraph);
 
+        apiTest.vertexInDistanceLessThanTwo(digraph,"a").forEach(System.out::println);
+    }
 
 
 }

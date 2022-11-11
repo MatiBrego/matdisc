@@ -2,6 +2,8 @@ package matdisc;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class DigraphApi<T> {
 
@@ -51,6 +53,25 @@ public class DigraphApi<T> {
         }
         return list_of_sink_Vertex;
     }
+
+    public TreeSet<T> vertexInDistanceLessThanTwo(Digraph<T> digraph, T vertex){
+        TreeSet<T> vertexes = new TreeSet<>();
+        int vertex_pos = digraph.getVertex(vertex);
+        for(int i = 0; i<digraph.getListInheritors(vertex_pos).size(); i++){
+            List<Integer> vertex_inheritors = digraph.getListInheritors(vertex_pos);
+            vertexes.add(digraph.getVertex(vertex_inheritors.get(i)));
+            for(int j = 0; j<digraph.getListInheritors(vertex_inheritors.get(i)).size(); j++){
+                 int auxVertex = digraph.getListInheritors(vertex_inheritors.get(i)).get(j);
+                 if(auxVertex!= vertex_pos){
+                     vertexes.add(digraph.getVertex(auxVertex));
+                 }
+            }
+
+        }
+        return vertexes;
+    }
+
+
 
 
 }
