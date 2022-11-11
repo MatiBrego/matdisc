@@ -1,7 +1,6 @@
 package matdisc;
 
 import java.util.List;
-import java.util.Set;
 
 /*
  * Interface for a directed graph.
@@ -77,8 +76,15 @@ public interface Digraph<T>{
      * A list containing the inheritors of the vertex v
      * 
      * @param v the position of the vertex
-     * @return A list of sets, each containing the v vertex in the first position, and the inheritor in the second position.
+     * @return A list of integers, containing the inheritor's position.
      */
-    public List<Set<Integer>> getListInheritors(int v);
+    public List<Integer> getListInheritors(int v);
 
+    /**
+     * A list containing the predecessors of the vertex v
+     * 
+     * @param v the position of the vertex
+     * @return A list of integers, containing the predecessor's position.
+     */
+    public List<Integer> getListPredecessor(int v);
 }

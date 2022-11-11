@@ -2,11 +2,10 @@ package matdisc;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 public class DigraphSMatrix<T> implements Digraph<T>{
 
-    private T[] vertexes;
+    private List<T> vertexes;
 
     private boolean[][] matrix;
 
@@ -14,10 +13,8 @@ public class DigraphSMatrix<T> implements Digraph<T>{
 
     private int capacity;
 
-    @SuppressWarnings
     public DigraphSMatrix(int capacity){
-        this.capacity = capacity;
-        this.vertexes = (T[]) new Object[capacity];
+        this.vertexes = new ArrayList<>();
         this.matrix = new boolean[capacity][];
         this.size = 0;
     }
@@ -25,6 +22,7 @@ public class DigraphSMatrix<T> implements Digraph<T>{
     @Override
     public void addVertex(T element) {
         vertexes.add(element);
+        size++;
     }
 
     @Override
@@ -41,39 +39,56 @@ public class DigraphSMatrix<T> implements Digraph<T>{
 
     @Override
     public void deleteVertex(int v) {
-        
-        
+        vertexes.remove(v);
+        size--;
     }
 
     @Override
     public boolean existsEdge(int v, int w) {
-        // TODO Auto-generated method stub
-        return false;
+        return matrix[v][w];
     }
 
     @Override
     public int order() {
-        // TODO Auto-generated method stub
-        return 0;
+        return size;
     }
 
     @Override
     public int edgeQuantity() {
-        // TODO Auto-generated method stub
-        return 0;
+        int count = 0;
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                if(matrix[i][j]) count++;
+            }
+        }
+        return count;
     }
 
     @Override
     public T getVertex(int v) {
-        // TODO Auto-generated method stub
-        return null;
+        return vertexes.get(v);
     }
 
     @Override
-    public List<Set<Integer>> getListInheritors(int v) {
-        // TODO Auto-generated method stub
-        return null;
+    public List<Integer> getListInheritors(int v) {
+        List<Integer> l = new ArrayList<>();
+        for (int i = 0; i < matrix.length; i++) {
+            if(matrix[v][i]) l.add(i);
+        }
+        return l;
     }
     
+    @Override
+    public List<Integer> getListPredecessor(int v){
+        List<Integer> l = new ArrayList<>();
+        for (int i = 0; i < matrix.length; i++) {
+            if(matrix[i][v]) l.add(i);
+        }
+        return l;
+    }
 
+    public int getCapacity(){
+        return capacity;
+    }
 }
