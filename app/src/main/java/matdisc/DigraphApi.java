@@ -16,19 +16,23 @@ public class DigraphApi<T> {
 
     public void ShowGraph(Digraph<T> digraph){
         ArrayList<T> list_of_Vertex = new ArrayList<>();
-        ArrayList<int[]> list_of_Edges = new ArrayList<>();
+        ArrayList<Object[]> list_of_Edges = new ArrayList<>();
         for(int i = 0; i<digraph.order(); i++){
-            list_of_Vertex.add(digraph.getVertex(0));
+            list_of_Vertex.add(digraph.getVertex(i));
             for(int vertexes: digraph.getListInheritors(i)){
-                int[] edge = {i, vertexes};
+                Object[] edge = {digraph.getVertex(i), digraph.getVertex(vertexes)};
                 list_of_Edges.add(edge);
             }
 
         }
+        System.out.println(list_of_Vertex);
+        for (Object[] edges: list_of_Edges) {
+            System.out.println("(" + edges[0] + " -> "  + edges[1] + ")");
+        }
     }
 
 
-    public int amtOfFontVertex(Digraph<T> digraph){
+    public int amtOfFountainVertex(Digraph<T> digraph){
         int amt_of_font_Vertex = 0;
         for(int i = 0; i<digraph.order(); i++){
             if(!digraph.getListInheritors(i).isEmpty() && digraph.getListPredecessor(i).isEmpty()){
