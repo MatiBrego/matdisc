@@ -15,7 +15,7 @@ public class DigraphSMatrix<T> implements Digraph<T>{
 
     public DigraphSMatrix(int capacity){
         this.vertexes = new ArrayList<>();
-        this.matrix = new boolean[capacity][];
+        this.matrix = new boolean[capacity][capacity];
         this.size = 0;
     }
 
@@ -91,4 +91,6 @@ public class DigraphSMatrix<T> implements Digraph<T>{
     public int getCapacity(){
         return capacity;
     }
+
+    
 }
