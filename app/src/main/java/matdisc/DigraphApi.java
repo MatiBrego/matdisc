@@ -70,8 +70,4 @@ public class DigraphApi<T> {
         }
         return vertexes;
     }
-
-
-
-
 }
