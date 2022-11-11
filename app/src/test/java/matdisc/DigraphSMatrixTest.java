@@ -15,11 +15,14 @@ public class DigraphSMatrixTest {
         d.addVertex('b');
 
         d.addVertex('c');
+        d.addEdge(0,1);
         d.deleteVertex(1);
 
         assertEquals(2, d.order());
         assertEquals('a', d.getVertex(0));
-        assertEquals('c', d.getVertex(1));
+        assertEquals('c', d.getVertex(2));
+        assertFalse(d.existsEdge(0, 1));
+        assertFalse(d.existsEdge(0, 2));
     }
 
     @Test

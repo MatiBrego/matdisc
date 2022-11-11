@@ -39,7 +39,11 @@ public class DigraphSMatrix<T> implements Digraph<T> {
 
     @Override
     public void deleteVertex(int v) {
-        vertexes.remove(v);
+        vertexes.set(v,null);
+        for (int i = 0; i < size; i++) {
+            matrix[i][v] = false;
+            matrix[v][i] = false;
+        }
         size--;
     }
 
@@ -56,7 +60,6 @@ public class DigraphSMatrix<T> implements Digraph<T> {
     @Override
     public int edgeQuantity() {
         int count = 0;
-
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix.length; j++) {
                 if(matrix[i][j]) count++;
