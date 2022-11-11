@@ -3,13 +3,13 @@ package matdisc;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class DigraphApiTest<T> {
+public class DigraphApiTest {
 
     @Test
     public void TestAddDataToGraph(){
-        DigraphApi apiTest = new DigraphApi();
+        DigraphApi<String> apiTest = new DigraphApi<>();
         String[] vertex = {"a", "b", "c"};
-        DigraphSMatrix<T> digraph = new DigraphSMatrix(vertex.length);
+        DigraphSMatrix<String> digraph = new DigraphSMatrix<>(vertex.length);
         int[][] edges = {{0,1}, {1,2}};
         apiTest.putDataInGraph(vertex,edges,digraph);
 
@@ -24,9 +24,9 @@ public class DigraphApiTest<T> {
 
     @Test
     public void TestShowGraph(){
-        DigraphApi apiTest = new DigraphApi();
+        DigraphApi<String> apiTest = new DigraphApi<>();
         String[] vertex = {"a", "b", "c"};
-        DigraphSMatrix<T> digraph = new DigraphSMatrix(vertex.length);
+        DigraphSMatrix<String> digraph = new DigraphSMatrix<>(vertex.length);
         int[][] edges = {{0,1}, {1,2}};
 
 
@@ -36,9 +36,9 @@ public class DigraphApiTest<T> {
 
     @Test
     public void TestFountainVertexes(){
-        DigraphApi apiTest = new DigraphApi();
+        DigraphApi<String> apiTest = new DigraphApi<>();
         String[] vertex = {"a", "b", "c"};
-        DigraphSMatrix<T> digraph = new DigraphSMatrix(vertex.length);
+        DigraphSMatrix<String> digraph = new DigraphSMatrix<>(vertex.length);
         int[][] edges = {{0,2}, {1,2}};
         apiTest.putDataInGraph(vertex,edges,digraph);
 
@@ -47,9 +47,9 @@ public class DigraphApiTest<T> {
 
     @Test
     public void TestSinkVertexes(){
-        DigraphApi apiTest = new DigraphApi();
+        DigraphApi<String> apiTest = new DigraphApi<>();
         String[] vertex = {"a", "b", "c"};
-        DigraphSMatrix<T> digraph = new DigraphSMatrix(vertex.length);
+        DigraphSMatrix<String> digraph = new DigraphSMatrix<>(vertex.length);
         int[][] edges = {{0,2}, {1,2}};
         apiTest.putDataInGraph(vertex,edges,digraph);
 
@@ -60,9 +60,9 @@ public class DigraphApiTest<T> {
 
     @Test
     public void TestVertexes(){
-        DigraphApi apiTest = new DigraphApi();
+        DigraphApi<String> apiTest = new DigraphApi<>();
         String[] vertex = {"a", "b", "c"};
-        DigraphSMatrix<T> digraph = new DigraphSMatrix(vertex.length);
+        DigraphSMatrix<String> digraph = new DigraphSMatrix<>(vertex.length);
         int[][] edges = {{0,2}, {1,2}, {2,1}};
         apiTest.putDataInGraph(vertex,edges,digraph);
 
