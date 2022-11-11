@@ -8,5 +8,12 @@ Las clases se encuentran dentro de app\scr\main\java\matdisc
 
 To Do:
 
-    - Especificación de Grafo Dirigido. (Preguntar si con la interfaz alcanza)
-    - Implementación con la matriz de sucesores.
+    d- 
+        iii (Dado un vértice hallar todos los vétices que se encunetran a una distancia menor o igual a 2)
+        iv (Modificar DFS para verificar si un grafo es fuertemente conexo)
+
+    e- Warshall
+
+    f- Aplicación
+
+
