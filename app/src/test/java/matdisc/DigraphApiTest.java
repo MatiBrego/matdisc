@@ -44,6 +44,8 @@ public class DigraphApiTest {
         int[][] edges = {{0,2}, {1,2}};
         apiTest.putDataInGraph(vertex,edges,digraph);
 
+
+
         Assertions.assertEquals(apiTest.amtOfFountainVertex(digraph),2);
     }
 
@@ -55,13 +57,15 @@ public class DigraphApiTest {
         int[][] edges = {{0,2}, {1,2}};
         apiTest.putDataInGraph(vertex,edges,digraph);
 
+
+
         Assertions.assertEquals(apiTest.amtOfSinkVertex(digraph).size(),1);
     }
 
 
 
     @Test
-    public void TestVertexes(){
+    public void TestVertexesInDistanceLessThanTwo(){
         DigraphApi<String> apiTest = new DigraphApi<>();
         String[] vertex = {"a", "b", "c"};
         DigraphSMatrix<String> digraph = new DigraphSMatrix<>(vertex.length);
