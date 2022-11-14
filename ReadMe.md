@@ -2,7 +2,8 @@ Trabajo Práctico de grafos
 
 Grupo 2
 
-Integrantes(Pongansen): Bregoli
+Integrantes(Pongansen): Bregoli, Geist
+
 
 Las clases se encuentran dentro de app\scr\main\java\matdisc
 
